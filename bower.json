@@ -4,8 +4,8 @@
   "main": [
     "build/css/bootstrap-datetimepicker.min.css",
     "build/js/bootstrap-datetimepicker.min.js",
-	"src/less/_bootstrap-datetimepicker.less",
-	"src/less/bootstrap-datetimepicker-build.less",
+    "src/less/_bootstrap-datetimepicker.less",
+    "src/less/bootstrap-datetimepicker-build.less",
     "src/js/bootstrap-datetimepicker.js"
   ],
   "dependencies": {
@@ -33,5 +33,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "devDependencies": {
+    "pdate": "~0.0.4"
+  }
 }

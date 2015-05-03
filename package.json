@@ -27,7 +27,6 @@
   },
   "devDependencies": {
     "grunt": "latest",
-    "grunt-contrib-clean": "^0.6.0",
     "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-jasmine": "^0.7.0",
     "grunt-contrib-jshint": "latest",

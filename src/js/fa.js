@@ -1,7 +1,4 @@
 // moment.js locale configuration
-// locale : Persian (fa)
-// author : Ebrahim Byagowi : https://github.com/ebraminio
-
 (function (factory) {
     if (typeof define === 'function' && define.amd) {
         define(['moment'], factory); // AMD

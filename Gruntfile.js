@@ -4,19 +4,14 @@ module.exports = function (grunt) {
         pkg: grunt.file.readJSON('package.json'),
         concat: {
             main: {
-                src: ['build/js/pdate.min.js','build/js/bootstrap-datetimepicker.min.js','build/js/fa.js'],
-                dest: 'build/js/bootstrap-persian-datetimepicker.min.js'
+                src: ['bower_components/pdate/pdate.min.js','src/js/fa.js','src/js/bootstrap-datetimepicker.js'],
+                dest: 'build/js/bootstrap-persian-datetimepicker.js'
             }
-        },
-        clean: {
-            main: ["build/js/pdate.min.js", "build/js/bootstrap-datetimepicker.min.js", "build/js/fa.js"]
         },
         uglify : {
             target: {
                 files: {
-                    'build/js/pdate.min.js' : 'bower_components/pdate/pdate.min.js',
-                    'build/js/bootstrap-datetimepicker.min.js' : 'src/js/bootstrap-datetimepicker.js',
-                    'build/js/fa.js' : 'src/js/fa.js'
+                    'build/js/bootstrap-persian-datetimepicker.min.js' : 'build/js/bootstrap-persian-datetimepicker.js'
                 }
             },
             options: {
@@ -123,7 +118,7 @@ module.exports = function (grunt) {
                         'node_modules/moment/min/moment-with-locales.min.js',
                         'node_modules/bootstrap/dist/js/bootstrap.min.js'
                     ],
-                    display: 'none',
+                    display: 'true',
                     summary: 'true'
                 }
             }
@@ -135,7 +130,6 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-concat');
-    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // These plugins provide necessary tasks.
     require('load-grunt-tasks')(grunt);
@@ -151,7 +145,7 @@ module.exports = function (grunt) {
 
     // Task to be run when building
     grunt.registerTask('build', [
-        'uglify','concat','clean', 'less'
+        'concat','uglify', 'less'
     ]);
 
     grunt.registerTask('nuget', 'Create a nuget package', function () {

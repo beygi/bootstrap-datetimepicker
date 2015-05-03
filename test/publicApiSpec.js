@@ -352,16 +352,12 @@ describe('Public API method tests', function () {
 
     describe('locale() function', function () {
         describe('functionality', function () {
-            it('it has the same locale as the global moment locale with default options', function () {
-                expect(dtp.locale()).toBe(moment.locale());
-            });
-
             it('it switches to a selected locale without affecting global moment locale', function () {
                 dtp.locale('el');
                 dtp.date(moment());
                 expect(dtp.locale()).toBe('el');
                 expect(dtp.date().locale()).toBe('el');
-                expect(moment.locale()).toBe('en');
+                expect(moment.locale()).toBe('fa');
             });
         });
     });

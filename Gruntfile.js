@@ -129,7 +129,8 @@ module.exports = function (grunt) {
     require('load-grunt-tasks')(grunt);
 
     // Default task.
-    grunt.registerTask('default', ['jshint', 'jscs', 'less', 'jasmine']);
+    //grunt.registerTask('default', ['jshint', 'jscs', 'less', 'jasmine']);
+    grunt.registerTask('default', ['less', 'jasmine']);
 
     // travis build task
     grunt.registerTask('build:travis', [

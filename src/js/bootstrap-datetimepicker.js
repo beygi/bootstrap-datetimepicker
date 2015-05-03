@@ -1474,7 +1474,7 @@
             }
 
             if (typeof defaultDate === 'string') {
-                    defaultDate = new JDate(defaultDate);
+                    defaultDate = new pDate(defaultDate);
                     defaultDate = moment(defaultDate);
             }
 

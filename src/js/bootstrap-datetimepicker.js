@@ -1916,8 +1916,8 @@
             date: 'glyphicon glyphicon-calendar',
             up: 'glyphicon glyphicon-chevron-up',
             down: 'glyphicon glyphicon-chevron-down',
-            previous: 'glyphicon glyphicon-chevron-left',
-            next: 'glyphicon glyphicon-chevron-right',
+            previous: 'glyphicon glyphicon-chevron-right',
+            next: 'glyphicon glyphicon-chevron-left',
             today: 'glyphicon glyphicon-screenshot',
             clear: 'glyphicon glyphicon-trash',
             close: 'glyphicon glyphicon-remove'
@@ -1987,7 +1987,7 @@
                     this.date(d.clone().subtract(1, 'h'));
                 }
             },
-            left: function (widget) {
+            right: function (widget) {
                 if (!widget) {
                     return;
                 }
@@ -1996,7 +1996,7 @@
                     this.date(d.clone().subtract(1, 'd'));
                 }
             },
-            right: function (widget) {
+            left: function (widget) {
                 if (!widget) {
                     return;
                 }

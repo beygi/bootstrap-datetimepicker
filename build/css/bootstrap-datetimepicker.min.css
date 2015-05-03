@@ -354,6 +354,12 @@
 .input-group.date .input-group-addon {
   cursor: pointer;
 }
+.datepicker {
+  direction: rtl !important;
+}
+.timepicker {
+  direction: ltr !important;
+}
 .sr-only {
   position: absolute;
   width: 1px;

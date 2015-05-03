@@ -6,7 +6,9 @@ module.exports = function (grunt) {
         uglify : {
             target: {
                 files: {
-                    'build/js/bootstrap-datetimepicker.min.js' : 'src/js/bootstrap-datetimepicker.js'
+                    'build/js/pdate.min.js' : 'bower_components/pdate/pdate.min.js',
+                    'build/js/bootstrap-datetimepicker.min.js' : 'src/js/bootstrap-datetimepicker.js',
+                    'build/js/fa.js' : 'src/js/fa.js'
                 }
             },
             options: {
@@ -18,7 +20,7 @@ module.exports = function (grunt) {
                     ascii_only: true // jshint ignore:line
                 },
                 report: 'min',
-                preserveComments: 'some'
+                preserveComments: 'none'
             }
         },
 
@@ -124,6 +126,7 @@ module.exports = function (grunt) {
     grunt.loadTasks('tasks');
 
     grunt.loadNpmTasks('grunt-contrib-jasmine');
+    grunt.loadNpmTasks('grunt-contrib-concat');
 
     // These plugins provide necessary tasks.
     require('load-grunt-tasks')(grunt);
@@ -134,17 +137,12 @@ module.exports = function (grunt) {
 
     // travis build task
     grunt.registerTask('build:travis', [
-        // code style
-        'jshint', 'jscs',
-        // build
-        'uglify', 'less',
-        // tests
         'jasmine'
     ]);
 
     // Task to be run when building
     grunt.registerTask('build', [
-        'jshint', 'jscs', 'uglify', 'less'
+        'uglify', 'less'
     ]);
 
     grunt.registerTask('nuget', 'Create a nuget package', function () {

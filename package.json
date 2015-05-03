@@ -21,12 +21,13 @@
     "jalali"
   ],
   "dependencies": {
-    "moment": "~2.8.2",
     "bootstrap": "^3.0",
-    "jquery": "latest"
+    "jquery": "latest",
+    "moment": "~2.8.2"
   },
   "devDependencies": {
     "grunt": "latest",
+    "grunt-contrib-concat": "^0.5.1",
     "grunt-contrib-jasmine": "^0.7.0",
     "grunt-contrib-jshint": "latest",
     "grunt-contrib-less": "latest",

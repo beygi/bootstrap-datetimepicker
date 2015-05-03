@@ -1,6 +1,6 @@
 {
   "name": "bootstrap-persian-datetimepicker",
-  "main": "src/js/bootstrap-datetimepicker.js",
+  "main": "build/js/bootstrap-persian-datetimepicker.js",
   "version": "4.7.14",
   "repository": {
     "type": "git",

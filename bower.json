@@ -1,5 +1,5 @@
 {
-  "name": "eonasdan-bootstrap-datetimepicker",
+  "name": "bootstrap-persian-datetimepicker",
   "version": "4.7.14",
   "main": [
     "build/css/bootstrap-datetimepicker.min.css",
@@ -12,11 +12,11 @@
     "jquery": ">=1.8.3",
     "moment": ">=2.8.0"
   },
-  "homepage": "https://github.com/Eonasdan/bootstrap-datetimepicker",
+  "homepage": "https://github.com/beygi/bootstrap-persian-datetimepicker",
   "authors": [
-    "Eonasdan"
+    "Mahdy Beygi"
   ],
-  "description": "bootstrap3 datetimepicker",
+  "description": "bootstrap3 persian datetimepicker",
   "keywords": [
     "twitter-bootstrap",
     "bootstrap",
@@ -25,8 +25,7 @@
     "timepicker",
     "moment"
   ],
-  "license": "MIT",
-  "private": false,
+  "license": "GPL v3",
   "ignore": [
     "**/.*",
     "node_modules",

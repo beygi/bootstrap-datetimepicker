@@ -1,9 +1,9 @@
 {
   "name": "bootstrap-persian-datetimepicker",
-  "version": "4.7.14-fa",
+  "version": "4.7.14-persian",
   "main": [
     "build/css/bootstrap-datetimepicker.min.css",
-    "build/js/bootstrap-datetimepicker.min.js",
+    "build/js/bootstrap-persian-datetimepicker.min.js",
     "src/less/_bootstrap-datetimepicker.less",
     "src/less/bootstrap-datetimepicker-build.less",
     "src/js/bootstrap-datetimepicker.js"

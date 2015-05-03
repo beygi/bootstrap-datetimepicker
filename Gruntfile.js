@@ -2,7 +2,15 @@ module.exports = function (grunt) {
     'use strict';
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
-
+        concat: {
+            main: {
+                src: ['build/js/pdate.min.js','build/js/bootstrap-datetimepicker.min.js','build/js/fa.js'],
+                dest: 'build/js/bootstrap-persian-datetimepicker.min.js'
+            }
+        },
+        clean: {
+            main: ["build/js/pdate.min.js", "build/js/bootstrap-datetimepicker.min.js", "build/js/fa.js"]
+        },
         uglify : {
             target: {
                 files: {
@@ -127,6 +135,7 @@ module.exports = function (grunt) {
 
     grunt.loadNpmTasks('grunt-contrib-jasmine');
     grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // These plugins provide necessary tasks.
     require('load-grunt-tasks')(grunt);
@@ -142,7 +151,7 @@ module.exports = function (grunt) {
 
     // Task to be run when building
     grunt.registerTask('build', [
-        'uglify', 'less'
+        'uglify','concat','clean', 'less'
     ]);
 
     grunt.registerTask('nuget', 'Create a nuget package', function () {

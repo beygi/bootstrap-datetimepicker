@@ -1474,9 +1474,8 @@
             }
 
             if (typeof defaultDate === 'string') {
-                if (defaultDate === 'now' || defaultDate === 'moment') {
-                    defaultDate = moment();
-                }
+                    defaultDate = new JDate(defaultDate);
+                    defaultDate = moment(defaultDate);
             }
 
             var parsedDate = parseInputDate(defaultDate);

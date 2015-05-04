@@ -26,7 +26,6 @@ module.exports = function (grunt) {
                 preserveComments: 'none'
             }
         },
-
         jshint: {
             all: [
                 'Gruntfile.js', 'src/js/*.js', 'test/*.js'

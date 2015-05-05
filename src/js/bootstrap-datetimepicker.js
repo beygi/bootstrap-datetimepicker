@@ -287,7 +287,22 @@
                 if (options.showClose) {
                     row.push($('<td>').append($('<a>').attr('data-action', 'close').append($('<span>').addClass(options.icons.close))));
                 }
-                return $('<table>').addClass('table-condensed').append($('<tbody>').append($('<tr>').append(row)));
+                if (options.showExtraDateButtons) {
+                    row = [];
+                    row.push($('<tr>').append("<td class='ext-btns'><a data-action='today'><span>امروز</span></a></td>").append("<td class='ext-btns'><a data-action='tommorow'><span>فردا</span></a></td>"));
+                    row.push($('<tr>').append("<td class='ext-btns'><a data-action='endOfWeek'><span>آخر هفته</span></a></td>").append("<td class='ext-btns'><a data-action='endOfMonth'><span>آخر ماه</span></a></td>"));
+                    row.push($('<tr>').append("<td class='ext-btns'><a data-action='startOfNextWeek'><span>اول هفته آینده</span></a></td>").append("<td class='ext-btns'><a data-action='startOfNextMonth'><span>اول ماه آینده</span></a></td>"));
+
+                    return $('<table>').addClass('table-condensed').append($('<tbody>').append(row));
+                }
+                if (options.showExtraTimeButtons) {
+                    row = [];
+                    row.push($('<tr>').append("<td class='ext-btns'><a data-action='morning'><span>صبح</span></a></td>").append("<td class='ext-btns'><a data-action='noon'><span>ظهر</span></a></td>"));
+                    row.push($('<tr>').append("<td class='ext-btns'><a data-action='evening'><span>عصر</span></a></td>").append("<td class='ext-btns'><a data-action='night'><span>شب</span></a></td>"));
+                    return $('<table>').addClass('table-condensed').append($('<tbody>').append(row));
+                }
+
+                return $('<table>').addClass('table-condensed').append($('<tbody>').append(row));
             },
 
             getTemplate = function () {
@@ -741,6 +756,8 @@
             },
 
             hide = function () {
+                //debug
+                //return false;
                 var transitioning = false;
                 if (!widget) {
                     return picker;
@@ -954,6 +971,33 @@
 
                 today: function () {
                     setValue(moment());
+                },
+                tommorow: function () {
+                    setValue(moment().add(1, 'day'));
+                },
+                endOfWeek : function(){
+                    setValue(moment().endOf('week'));
+                },
+                endOfMonth : function(){
+                    setValue(moment().endOf('month'));
+                },
+                startOfNextWeek: function(){
+                    setValue(moment().add(1, 'week').startOf('week'));
+                },
+                startOfNextMonth: function(){
+                    setValue(moment().add(1, 'month').startOf('month'));
+                },
+                morning: function(){
+                    setValue(moment().startOf('day').add(7,'hour'));
+                },
+                noon: function(){
+                    setValue(moment().startOf('day').add(12,'hour'));
+                },
+                evening: function(){
+                    setValue(moment().startOf('day').add(17,'hour'));
+                },
+                night: function(){
+                    setValue(moment().startOf('day').add(21,'hour'));
                 },
 
                 close: hide
@@ -1712,6 +1756,40 @@
             return picker;
         };
 
+        picker.showExtraDateButtons = function (showExtraDateButtons) {
+            if (arguments.length === 0) {
+                return options.showExtraDateButtons;
+            }
+
+            if (typeof showExtraDateButtons !== 'boolean') {
+                throw new TypeError('showExtraDateButtons() expects a boolean parameter');
+            }
+
+            options.showExtraDateButtons = showExtraDateButtons;
+            if (widget) {
+                hide();
+                show();
+            }
+            return picker;
+        };
+
+        picker.showExtraTimeButtons = function (showExtraTimeButtons) {
+            if (arguments.length === 0) {
+                return options.showExtraTimeButtons;
+            }
+
+            if (typeof showExtraTimeButtons !== 'boolean') {
+                throw new TypeError('showExtraTimeButtons() expects a boolean parameter');
+            }
+
+            options.showExtraTimeButtons = showExtraTimeButtons;
+            if (widget) {
+                hide();
+                show();
+            }
+            return picker;
+        };
+
         picker.showClear = function (showClear) {
             if (arguments.length === 0) {
                 return options.showClear;
@@ -1929,6 +2007,8 @@
         viewMode: 'days',
         toolbarPlacement: 'default',
         showTodayButton: false,
+        showExtraDateButtons: false,
+        showExtraTimeButtons: false,
         showClear: false,
         showClose: false,
         widgetPositioning: {

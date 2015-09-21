@@ -1069,33 +1069,43 @@
 
                 today: function () {
                     setValue(moment());
+                    hide();
                 },
                 tommorow: function () {
                     setValue(moment().add(1, 'day'));
+                    hide();
                 },
                 endOfWeek : function(){
                     setValue(moment().endOf('week'));
+                    hide();
                 },
                 endOfMonth : function(){
                     setValue(moment().endOf('month'));
+                    hide();
                 },
                 startOfNextWeek: function(){
                     setValue(moment().add(1, 'week').startOf('week'));
+                    hide();
                 },
                 startOfNextMonth: function(){
                     setValue(moment().add(1, 'month').startOf('month'));
+                    hide();
                 },
                 morning: function(){
                     setValue(moment().startOf('day').add(7,'hour'));
+                    hide();
                 },
                 noon: function(){
                     setValue(moment().startOf('day').add(12,'hour'));
+                    hide();
                 },
                 evening: function(){
                     setValue(moment().startOf('day').add(17,'hour'));
+                    hide();
                 },
                 night: function(){
                     setValue(moment().startOf('day').add(21,'hour'));
+                    hide();
                 },
 
                 close: hide

@@ -1023,13 +1023,13 @@
                 },
 
                 showHours: function () {
-                    widget.find('.timepicker .timepicker-picker').hide();
-                    widget.find('.timepicker .timepicker-hours').show();
+                    //widget.find('.timepicker .timepicker-picker').hide();
+                    //widget.find('.timepicker .timepicker-hours').show();
                 },
 
                 showMinutes: function () {
-                    widget.find('.timepicker .timepicker-picker').hide();
-                    widget.find('.timepicker .timepicker-minutes').show();
+                   // widget.find('.timepicker .timepicker-picker').hide();
+                   // widget.find('.timepicker .timepicker-minutes').show();
                 },
 
                 showSeconds: function () {

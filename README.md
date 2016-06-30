@@ -14,4 +14,4 @@ take a look at `usage.html` in the project directory
 ## Manual and the docs
 documentations is same as original project:
 
-[document and samples from Eonasdan's project](http://jsfiddle.net/Eonasdan/0Ltv25o8/)
+[document and samples from Eonasdan's project](http://eonasdan.github.io/bootstrap-datetimepicker/)

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+  <meta http-equiv="Content-Language" content="fa" />
+  <title>Basic Usage</title>
+
+  <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="build/css/bootstrap-datetimepicker.min.css">
+</head>
+<body>
+	<script src="node_modules/jquery/dist/jquery.min.js"></script>
+	<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/moment/moment.js"></script>
+	<script src="build/js/bootstrap-persian-datetimepicker.js"></script>
+
+<br><br><br><br><br><br>
+<div class="container">
+    <div class="row">
+		<div class='col-sm-3'></div>
+        <div class='col-sm-6'>
+            <div class="form-group">
+                <div class='input-group' id='datetimepicker1'>
+                    <input type='text' class="form-control"  />
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+		<div class='col-sm-3'></div>
+        <script type="text/javascript">
+	    //you should use pdate for persian calendar
+	    window.ODate = Date;
+	    window.Date = pDate;
+            //then call datetimepicker init
+	    $(function () {
+                $('#datetimepicker1').datetimepicker({
+			toolbarPlacement : 'top'
+			});
+            });
+        </script>
+    </div>
+</div>
+</div>
